@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Комментарии (с защитой)</title>
+</head>
+<body>
+  <h1>Оставьте комментарий</h1>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <form action="/comment" method="POST">
+    <textarea name="text" required maxlength="200"></textarea>
+    <br>
+    <small>Максимум 200 символов</small>
+    <br>
+    <button type="submit">Отправить</button>
+  </form>
+
+  <h2>Комментарии:</h2>
+  <% comments.forEach(comment => { %>
+    <div><%= comment %></div>
+  <% }); %>
+</body>
+</html>
