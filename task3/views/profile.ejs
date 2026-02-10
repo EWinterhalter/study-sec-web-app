@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Профиль</title>
+</head>
+<body>
+  <h1>Профиль пользователя</h1>
+  <p>Email: <%= email %></p>
+
+  <h2>Сменить email</h2>
+  <form action="/update-email" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <input type="email" name="email" required>
+    <button type="submit">Обновить</button>
+  </form>
+</body>
+</html>
